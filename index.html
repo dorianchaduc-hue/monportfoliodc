@@ -1,9 +1,172 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="fr">
   <head>
-    <title>Portfolio de Dorian</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Portfolio Professionnel - Dorian Chaduc</title>
+
+    <!-- Tailwind via CDN (pour prototyper rapidement) -->
+    <script src="[cdn.tailwindcss.com](https://cdn.tailwindcss.com)"></script>
+
+    <!-- Lucide icons via CDN -->
+    <script src="[unpkg.com](https://unpkg.com/lucide@latest/dist/umd/lucide.js)"></script>
+
+    <style>
+      /* Petites aides utilitaires si besoin */
+      .section { display: none; }
+      .section.active { display: block; }
+    </style>
   </head>
-  <body>
-    <h1>Bienvenue sur mon portfolio !</h1>
+  <body class="min-h-screen flex flex-col bg-slate-50 text-slate-900 selection:bg-indigo-100 selection:text-indigo-700">
+    <!-- NAV FIXE -->
+    <nav id="nav" class="fixed top-0 w-full z-50 bg-transparent py-6 transition-all duration-300">
+      <div class="max-w-6xl mx-auto px-6 flex justify-between items-center">
+        <div class="font-bold text-xl tracking-tight text-indigo-600">DORIAN CHADUC.</div>
+        <div class="hidden md:flex space-x-8 items-center">
+          <button data-goto="accueil" class="navlink text-sm font-medium text-slate-600 hover:text-indigo-600 py-2">Accueil</button>
+          <button data-goto="apropos" class="navlink text-sm font-medium text-slate-600 hover:text-indigo-600 py-2">À Propos</button>
+          <button data-goto="experiences" class="navlink text-sm font-medium text-slate-600 hover:text-indigo-600 py-2">Parcours</button>
+          <button data-goto="projets" class="navlink text-sm font-medium text-slate-600 hover:text-indigo-600 py-2">Projets</button>
+          <button data-goto="competences" class="navlink text-sm font-medium text-slate-600 hover:text-indigo-600 py-2">Compétences</button>
+        </div>
+      </div>
+    </nav>
+
+    <main class="flex-grow pt-20">
+      <!-- SECTION ACCUEIL -->
+      <section id="accueil" class="section active min-h-[calc(100vh-80px)] flex items-center px-6 relative overflow-hidden">
+        <div class="absolute top-20 -left-20 w-96 h-96 bg-indigo-200 rounded-full mix-blend-multiply blur-[100px] opacity-50"></div>
+        <div class="absolute bottom-20 -right-20 w-96 h-96 bg-violet-200 rounded-full mix-blend-multiply blur-[100px] opacity-50"></div>
+
+        <div class="max-w-6xl mx-auto w-full grid md:grid-cols-2 gap-16 items-center relative z-10 py-12">
+          <div class="space-y-8">
+            <div class="inline-flex items-center gap-3 px-4 py-2 rounded-full bg-white border border-indigo-100 shadow-sm text-indigo-700 text-sm font-semibold">
+              <span class="relative flex h-3 w-3">
+                <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-indigo-400 opacity-75"></span>
+                <span class="relative inline-flex rounded-full h-3 w-3 bg-indigo-500"></span>
+              </span>
+              Recherche de stage : 8 à 12 sem. (Dès le 7 avril)
+            </div>
+
+            <div class="space-y-4">
+              <h1 class="text-3xl md:text-5xl font-extrabold text-slate-900 tracking-tight leading-tight">
+                Bonjour, je suis <br class="hidden md:block"/>
+                <span class="text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-violet-600">Dorian Chaduc.</span>
+              </h1>
+              <h2 class="text-lg md:text-xl font-semibold text-slate-700">
+                Futur Technicien Supérieur en <span class="text-indigo-600">GEII</span>
+              </h2>
+              <p class="text-base md:text-lg text-slate-600 max-w-lg leading-relaxed text-justify">
+                Étudiant en 2ème année à l'IUT de Bordeaux (Parcours Électricité et Maîtrise de l'Énergie). Passionné par la conception électronique, l'automatisation et les systèmes embarqués.
+              </p>
+            </div>
+
+            <div class="flex flex-wrap gap-3">
+              <span class="px-4 py-2 bg-slate-100 text-slate-700 rounded-lg text-sm font-medium flex items-center gap-2">
+                <i data-lucide="lightbulb" class="w-4 h-4 text-amber-500"></i> Électronique
+              </span>
+              <span class="px-4 py-2 bg-slate-100 text-slate-700 rounded-lg text-sm font-medium flex items-center gap-2">
+                <i data-lucide="activity" class="w-4 h-4 text-emerald-500"></i> Énergie
+              </span>
+              <span class="px-4 py-2 bg-slate-100 text-slate-700 rounded-lg text-sm font-medium flex items-center gap-2">
+                <i data-lucide="settings" class="w-4 h-4 text-indigo-500"></i> Systèmes Embarqués
+              </span>
+            </div>
+
+            <div class="flex flex-wrap gap-4 pt-2">
+              <button data-goto="apropos" class="goto px-8 py-3.5 bg-slate-900 text-white rounded-xl font-bold shadow-xl shadow-slate-200 hover:bg-indigo-600 hover:shadow-indigo-200 transition-all duration-300 flex items-center gap-2">
+                Découvrir mon profil <i data-lucide="chevron-right" class="w-5 h-5"></i>
+              </button>
+              <div class="flex items-center gap-3">
+                <a href="mailto:dorianchaduc@gmail.com" class="p-3.5 bg-white border border-slate-200 text-slate-600 rounded-xl hover:text-indigo-600 hover:border-indigo-200 hover:bg-indigo-50 transition-all duration-300 shadow-sm">
+                  <i data-lucide="mail" class="w-5 h-5"></i>
+                </a>
+                <a href="#" class="p-3.5 bg-white border border-slate-200 text-slate-600 rounded-xl hover:text-indigo-600 hover:border-indigo-200 hover:bg-indigo-50 transition-all duration-300 shadow-sm">
+                  <i data-lucide="linkedin" class="w-5 h-5"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="relative hidden md:block">
+            <div class="relative w-full aspect-square max-w-md mx-auto">
+              <div class="absolute inset-4 bg-gradient-to-tr from-indigo-100 to-violet-50 rounded-full border border-indigo-50 shadow-inner"></div>
+              <div class="absolute inset-8 rounded-3xl overflow-hidden shadow-2xl rotate-3 transition-transform duration-500 bg-white">
+                <img 
+                  src="image_accueil.jpg" 
+                  alt="Électronique Concept" 
+                  class="w-full h-full object-cover opacity-90"
+                  onerror="this.onerror=null;this.src='[images.unsplash.com](https://images.unsplash.com/photo-1517077304055-6e89abbf09b0?auto=format&fit=crop&q=80&w=800)';"
+                />
+              </div>
+              <div class="absolute top-12 -left-4 bg-white p-4 rounded-2xl shadow-xl border border-slate-100">
+                <i data-lucide="award" class="w-8 h-8 text-amber-500"></i>
+              </div>
+              <div class="absolute bottom-16 -right-4 bg-white p-4 rounded-2xl shadow-xl border border-slate-100">
+                <i data-lucide="database" class="w-8 h-8 text-emerald-500"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTION A PROPOS (extrait) -->
+      <section id="apropos" class="section py-12 md:py-24 bg-white px-6 min-h-[calc(100vh-80px)]">
+        <div class="max-w-4xl mx-auto text-center space-y-8">
+          <h2 class="text-3xl font-bold flex items-center justify-center gap-3">
+            <i data-lucide="user" class="text-indigo-600"></i> À Propos de moi
+          </h2>
+          <p class="text-lg text-slate-600 leading-relaxed text-justify">
+            Actuellement en deuxième année de BUT GEII à l'Université de Bordeaux, parcours EME...
+          </p>
+        </div>
+      </section>
+
+      <!-- Tu ajouteras ici experiences, projets, competences, preuves… en convertissant peu à peu -->
+    </main>
+
+    <footer class="py-12 bg-slate-900 text-slate-400 px-6 mt-auto">
+      <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
+        <div class="text-white font-bold text-xl">DORIAN CHADUC.</div>
+        <div class="text-sm">© 2026 Tous droits réservés. Créé avec passion.</div>
+        <div class="flex gap-6">
+          <a href="mailto:dorianchaduc@gmail.com" class="hover:text-white transition-colors">Contact</a>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      // Activer les icônes Lucide
+      document.addEventListener('DOMContentLoaded', () => {
+        lucide.createIcons();
+
+        // Changement de section simple
+        const sections = document.querySelectorAll('.section');
+        function show(id) {
+          sections.forEach(s => s.classList.remove('active'));
+          document.getElementById(id).classList.add('active');
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        document.querySelectorAll('.navlink, .goto').forEach(btn => {
+          btn.addEventListener('click', (e) => {
+            const id = e.currentTarget.dataset.goto;
+            if (id) show(id);
+          });
+        });
+
+        // Effet nav au scroll
+        const nav = document.getElementById('nav');
+        window.addEventListener('scroll', () => {
+          if (window.scrollY > 50) {
+            nav.classList.remove('bg-transparent','py-6');
+            nav.classList.add('bg-white/90','backdrop-blur-md','shadow-sm','py-3');
+          } else {
+            nav.classList.add('bg-transparent','py-6');
+            nav.classList.remove('bg-white/90','backdrop-blur-md','shadow-sm','py-3');
+          }
+        });
+      });
+    </script>
   </body>
 </html>
