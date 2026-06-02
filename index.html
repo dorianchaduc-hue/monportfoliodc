@@ -1,172 +1,852 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="fr">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Portfolio Professionnel - Dorian Chaduc</title>
-
-    <!-- Tailwind via CDN (pour prototyper rapidement) -->
-    <script src="[cdn.tailwindcss.com](https://cdn.tailwindcss.com)"></script>
-
-    <!-- Lucide icons via CDN -->
-    <script src="[unpkg.com](https://unpkg.com/lucide@latest/dist/umd/lucide.js)"></script>
-
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dorian Chaduc - Portfolio GEII</title>
+    <script src="https://cdn.tailwindcss.com"></script>
     <style>
-      /* Petites aides utilitaires si besoin */
-      .section { display: none; }
-      .section.active { display: block; }
-    </style>
-  </head>
-  <body class="min-h-screen flex flex-col bg-slate-50 text-slate-900 selection:bg-indigo-100 selection:text-indigo-700">
-    <!-- NAV FIXE -->
-    <nav id="nav" class="fixed top-0 w-full z-50 bg-transparent py-6 transition-all duration-300">
-      <div class="max-w-6xl mx-auto px-6 flex justify-between items-center">
-        <div class="font-bold text-xl tracking-tight text-indigo-600">DORIAN CHADUC.</div>
-        <div class="hidden md:flex space-x-8 items-center">
-          <button data-goto="accueil" class="navlink text-sm font-medium text-slate-600 hover:text-indigo-600 py-2">Accueil</button>
-          <button data-goto="apropos" class="navlink text-sm font-medium text-slate-600 hover:text-indigo-600 py-2">À Propos</button>
-          <button data-goto="experiences" class="navlink text-sm font-medium text-slate-600 hover:text-indigo-600 py-2">Parcours</button>
-          <button data-goto="projets" class="navlink text-sm font-medium text-slate-600 hover:text-indigo-600 py-2">Projets</button>
-          <button data-goto="competences" class="navlink text-sm font-medium text-slate-600 hover:text-indigo-600 py-2">Compétences</button>
-        </div>
-      </div>
-    </nav>
-
-    <main class="flex-grow pt-20">
-      <!-- SECTION ACCUEIL -->
-      <section id="accueil" class="section active min-h-[calc(100vh-80px)] flex items-center px-6 relative overflow-hidden">
-        <div class="absolute top-20 -left-20 w-96 h-96 bg-indigo-200 rounded-full mix-blend-multiply blur-[100px] opacity-50"></div>
-        <div class="absolute bottom-20 -right-20 w-96 h-96 bg-violet-200 rounded-full mix-blend-multiply blur-[100px] opacity-50"></div>
-
-        <div class="max-w-6xl mx-auto w-full grid md:grid-cols-2 gap-16 items-center relative z-10 py-12">
-          <div class="space-y-8">
-            <div class="inline-flex items-center gap-3 px-4 py-2 rounded-full bg-white border border-indigo-100 shadow-sm text-indigo-700 text-sm font-semibold">
-              <span class="relative flex h-3 w-3">
-                <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-indigo-400 opacity-75"></span>
-                <span class="relative inline-flex rounded-full h-3 w-3 bg-indigo-500"></span>
-              </span>
-              Recherche de stage : 8 à 12 sem. (Dès le 7 avril)
-            </div>
-
-            <div class="space-y-4">
-              <h1 class="text-3xl md:text-5xl font-extrabold text-slate-900 tracking-tight leading-tight">
-                Bonjour, je suis <br class="hidden md:block"/>
-                <span class="text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-violet-600">Dorian Chaduc.</span>
-              </h1>
-              <h2 class="text-lg md:text-xl font-semibold text-slate-700">
-                Futur Technicien Supérieur en <span class="text-indigo-600">GEII</span>
-              </h2>
-              <p class="text-base md:text-lg text-slate-600 max-w-lg leading-relaxed text-justify">
-                Étudiant en 2ème année à l'IUT de Bordeaux (Parcours Électricité et Maîtrise de l'Énergie). Passionné par la conception électronique, l'automatisation et les systèmes embarqués.
-              </p>
-            </div>
-
-            <div class="flex flex-wrap gap-3">
-              <span class="px-4 py-2 bg-slate-100 text-slate-700 rounded-lg text-sm font-medium flex items-center gap-2">
-                <i data-lucide="lightbulb" class="w-4 h-4 text-amber-500"></i> Électronique
-              </span>
-              <span class="px-4 py-2 bg-slate-100 text-slate-700 rounded-lg text-sm font-medium flex items-center gap-2">
-                <i data-lucide="activity" class="w-4 h-4 text-emerald-500"></i> Énergie
-              </span>
-              <span class="px-4 py-2 bg-slate-100 text-slate-700 rounded-lg text-sm font-medium flex items-center gap-2">
-                <i data-lucide="settings" class="w-4 h-4 text-indigo-500"></i> Systèmes Embarqués
-              </span>
-            </div>
-
-            <div class="flex flex-wrap gap-4 pt-2">
-              <button data-goto="apropos" class="goto px-8 py-3.5 bg-slate-900 text-white rounded-xl font-bold shadow-xl shadow-slate-200 hover:bg-indigo-600 hover:shadow-indigo-200 transition-all duration-300 flex items-center gap-2">
-                Découvrir mon profil <i data-lucide="chevron-right" class="w-5 h-5"></i>
-              </button>
-              <div class="flex items-center gap-3">
-                <a href="mailto:dorianchaduc@gmail.com" class="p-3.5 bg-white border border-slate-200 text-slate-600 rounded-xl hover:text-indigo-600 hover:border-indigo-200 hover:bg-indigo-50 transition-all duration-300 shadow-sm">
-                  <i data-lucide="mail" class="w-5 h-5"></i>
-                </a>
-                <a href="#" class="p-3.5 bg-white border border-slate-200 text-slate-600 rounded-xl hover:text-indigo-600 hover:border-indigo-200 hover:bg-indigo-50 transition-all duration-300 shadow-sm">
-                  <i data-lucide="linkedin" class="w-5 h-5"></i>
-                </a>
-              </div>
-            </div>
-          </div>
-
-          <div class="relative hidden md:block">
-            <div class="relative w-full aspect-square max-w-md mx-auto">
-              <div class="absolute inset-4 bg-gradient-to-tr from-indigo-100 to-violet-50 rounded-full border border-indigo-50 shadow-inner"></div>
-              <div class="absolute inset-8 rounded-3xl overflow-hidden shadow-2xl rotate-3 transition-transform duration-500 bg-white">
-                <img 
-                  src="image_accueil.jpg" 
-                  alt="Électronique Concept" 
-                  class="w-full h-full object-cover opacity-90"
-                  onerror="this.onerror=null;this.src='[images.unsplash.com](https://images.unsplash.com/photo-1517077304055-6e89abbf09b0?auto=format&fit=crop&q=80&w=800)';"
-                />
-              </div>
-              <div class="absolute top-12 -left-4 bg-white p-4 rounded-2xl shadow-xl border border-slate-100">
-                <i data-lucide="award" class="w-8 h-8 text-amber-500"></i>
-              </div>
-              <div class="absolute bottom-16 -right-4 bg-white p-4 rounded-2xl shadow-xl border border-slate-100">
-                <i data-lucide="database" class="w-8 h-8 text-emerald-500"></i>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- SECTION A PROPOS (extrait) -->
-      <section id="apropos" class="section py-12 md:py-24 bg-white px-6 min-h-[calc(100vh-80px)]">
-        <div class="max-w-4xl mx-auto text-center space-y-8">
-          <h2 class="text-3xl font-bold flex items-center justify-center gap-3">
-            <i data-lucide="user" class="text-indigo-600"></i> À Propos de moi
-          </h2>
-          <p class="text-lg text-slate-600 leading-relaxed text-justify">
-            Actuellement en deuxième année de BUT GEII à l'Université de Bordeaux, parcours EME...
-          </p>
-        </div>
-      </section>
-
-      <!-- Tu ajouteras ici experiences, projets, competences, preuves… en convertissant peu à peu -->
-    </main>
-
-    <footer class="py-12 bg-slate-900 text-slate-400 px-6 mt-auto">
-      <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
-        <div class="text-white font-bold text-xl">DORIAN CHADUC.</div>
-        <div class="text-sm">© 2026 Tous droits réservés. Créé avec passion.</div>
-        <div class="flex gap-6">
-          <a href="mailto:dorianchaduc@gmail.com" class="hover:text-white transition-colors">Contact</a>
-        </div>
-      </div>
-    </footer>
-
-    <script>
-      // Activer les icônes Lucide
-      document.addEventListener('DOMContentLoaded', () => {
-        lucide.createIcons();
-
-        // Changement de section simple
-        const sections = document.querySelectorAll('.section');
-        function show(id) {
-          sections.forEach(s => s.classList.remove('active'));
-          document.getElementById(id).classList.add('active');
-          window.scrollTo({ top: 0, behavior: 'smooth' });
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
         }
-
-        document.querySelectorAll('.navlink, .goto').forEach(btn => {
-          btn.addEventListener('click', (e) => {
-            const id = e.currentTarget.dataset.goto;
-            if (id) show(id);
-          });
-        });
-
-        // Effet nav au scroll
-        const nav = document.getElementById('nav');
+        
+        .animate-in {
+            animation: fadeInUp 0.5s ease-out;
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .fade-in {
+            animation: fadeIn 0.5s ease-out;
+        }
+        
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+        
+        .zoom-in {
+            animation: zoomIn 0.5s ease-out;
+        }
+        
+        @keyframes zoomIn {
+            from {
+                opacity: 0;
+                transform: scale(0.95);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+        
+        .slide-in-from-bottom-4 {
+            animation: slideInFromBottom 0.5s ease-out;
+        }
+        
+        @keyframes slideInFromBottom {
+            from {
+                opacity: 0;
+                transform: translateY(16px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes ping {
+            75%, 100% {
+                transform: scale(2);
+                opacity: 0;
+            }
+        }
+        
+        .animate-ping {
+            animation: ping 2s cubic-bezier(0, 0, 0.2, 1) infinite;
+        }
+        
+        .group-hover\:rotate-180:hover {
+            transform: rotate(180deg);
+        }
+        
+        .transition-all {
+            transition: all 0.3s ease;
+        }
+        
+        ::selection {
+            background-color: #e0e7ff;
+            color: #4f46e5;
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col bg-slate-50 text-slate-900 font-sans">
+    <div id="app" class="flex flex-col min-h-screen">
+        <!-- Navigation Fixe -->
+        <nav id="navbar" class="fixed top-0 w-full z-50 transition-all duration-300 bg-transparent py-6">
+            <div class="max-w-6xl mx-auto px-6 flex justify-between items-center relative">
+                <div class="font-bold text-xl tracking-tight text-indigo-600">DORIAN CHADUC.</div>
+                
+                <!-- Menu Desktop -->
+                <div class="hidden md:flex space-x-8 items-center">
+                    <button onclick="changeSection('accueil')" class="nav-link text-sm font-medium transition-colors py-2 text-slate-600 hover:text-indigo-600" data-section="accueil">Accueil</button>
+                    <button onclick="changeSection('apropos')" class="nav-link text-sm font-medium transition-colors py-2 text-slate-600 hover:text-indigo-600" data-section="apropos">À Propos</button>
+                    <button onclick="changeSection('experiences')" class="nav-link text-sm font-medium transition-colors py-2 text-slate-600 hover:text-indigo-600" data-section="experiences">Parcours</button>
+                    
+                    <!-- Dropdown Projets -->
+                    <div class="relative group">
+                        <button onclick="changeSection('projets')" class="nav-link flex items-center gap-1 text-sm font-medium transition-colors py-2 text-slate-600 hover:text-indigo-600" data-section="projets">
+                            Projets <svg class="w-4 h-4 transition-transform group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path></svg>
+                        </button>
+                        <div class="absolute top-full left-1/2 -translate-x-1/2 mt-1 w-64 bg-white rounded-xl shadow-lg border border-slate-100 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 flex flex-col py-1.5 z-50 overflow-hidden">
+                            <button onclick="openProjectDetails('s1')" class="px-4 py-2.5 text-left transition-colors hover:bg-indigo-50 border-l-2 border-transparent text-slate-700">
+                                <div class="text-[10px] font-bold mb-0.5 uppercase tracking-wider text-slate-400">S1</div>
+                                <div class="text-xs font-semibold leading-tight">SAE Le thermomètre de bain</div>
+                            </button>
+                            <button onclick="openProjectDetails('s2')" class="px-4 py-2.5 text-left transition-colors hover:bg-indigo-50 border-l-2 border-transparent text-slate-700">
+                                <div class="text-[10px] font-bold mb-0.5 uppercase tracking-wider text-slate-400">S2</div>
+                                <div class="text-xs font-semibold leading-tight">SAE Le kart à hélice</div>
+                            </button>
+                            <button onclick="openProjectDetails('s3')" class="px-4 py-2.5 text-left transition-colors hover:bg-indigo-50 border-l-2 border-transparent text-slate-700">
+                                <div class="text-[10px] font-bold mb-0.5 uppercase tracking-wider text-slate-400">S3</div>
+                                <div class="text-xs font-semibold leading-tight">SAE Le Mini robot sumo</div>
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- Dropdown Compétences -->
+                    <div class="relative group">
+                        <button onclick="changeSection('competences')" class="nav-link flex items-center gap-1 text-sm font-medium transition-colors py-2 text-slate-600 hover:text-indigo-600" data-section="competences">
+                            Compétences <svg class="w-4 h-4 transition-transform group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path></svg>
+                        </button>
+                        <div class="absolute top-full left-1/2 -translate-x-1/2 mt-1 w-48 bg-white rounded-xl shadow-lg border border-slate-100 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 flex flex-col py-1.5 z-50 overflow-hidden">
+                            <button onclick="openCompetenceDetails('concevoir')" class="px-4 py-3 text-left transition-colors hover:bg-slate-50 border-l-2 border-transparent flex items-center gap-3 text-slate-700">
+                                <svg class="w-4 h-4 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                                <span class="text-sm font-semibold">Concevoir</span>
+                            </button>
+                            <button onclick="openCompetenceDetails('verifier')" class="px-4 py-3 text-left transition-colors hover:bg-slate-50 border-l-2 border-transparent flex items-center gap-3 text-slate-700">
+                                <svg class="w-4 h-4 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                                <span class="text-sm font-semibold">Vérifier</span>
+                            </button>
+                            <button onclick="openCompetenceDetails('maintenir')" class="px-4 py-3 text-left transition-colors hover:bg-slate-50 border-l-2 border-transparent flex items-center gap-3 text-slate-700">
+                                <svg class="w-4 h-4 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4"></path></svg>
+                                <span class="text-sm font-semibold">Maintenir</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Bouton Menu Mobile -->
+                <button onclick="toggleMobileMenu()" class="md:hidden p-2 rounded-lg bg-slate-100 text-slate-600 hover:bg-slate-200 transition-colors">
+                    <svg id="menu-icon" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+                </button>
+            </div>
+            
+            <!-- Menu Mobile -->
+            <div id="mobile-menu" class="md:hidden absolute top-full left-0 w-full bg-white border-t border-slate-100 shadow-lg flex flex-col py-4 px-6 space-y-4 z-40 hidden">
+                <button onclick="changeSection('accueil')" class="text-left text-base font-medium py-2 text-slate-700">Accueil</button>
+                <button onclick="changeSection('apropos')" class="text-left text-base font-medium py-2 text-slate-700">À Propos</button>
+                <button onclick="changeSection('experiences')" class="text-left text-base font-medium py-2 text-slate-700">Parcours</button>
+                
+                <!-- Accordion Projets Mobile -->
+                <div class="flex flex-col space-y-2">
+                    <button onclick="toggleMobileProjects()" class="flex items-center justify-between text-base font-medium py-2 text-slate-700">
+                        <span onclick="changeSection('projets')">Projets</span>
+                        <svg id="projects-chevron" class="w-5 h-5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path></svg>
+                    </button>
+                    <div id="mobile-projects" class="flex flex-col pl-4 space-y-3 border-l-2 border-slate-100 hidden">
+                        <button onclick="openProjectDetails('s1')" class="text-left text-sm font-medium text-slate-500">SAE Le thermomètre de bain</button>
+                        <button onclick="openProjectDetails('s2')" class="text-left text-sm font-medium text-slate-500">SAE Le kart à hélice</button>
+                        <button onclick="openProjectDetails('s3')" class="text-left text-sm font-medium text-slate-500">SAE Le Mini robot sumo</button>
+                    </div>
+                </div>
+                
+                <!-- Accordion Compétences Mobile -->
+                <div class="flex flex-col space-y-2">
+                    <button onclick="toggleMobileCompetences()" class="flex items-center justify-between text-base font-medium py-2 text-slate-700">
+                        <span onclick="changeSection('competences')">Compétences</span>
+                        <svg id="competences-chevron" class="w-5 h-5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path></svg>
+                    </button>
+                    <div id="mobile-competences" class="flex flex-col pl-4 space-y-3 border-l-2 border-slate-100 hidden">
+                        <button onclick="openCompetenceDetails('concevoir')" class="text-left text-sm font-medium text-slate-500">Concevoir</button>
+                        <button onclick="openCompetenceDetails('verifier')" class="text-left text-sm font-medium text-slate-500">Vérifier</button>
+                        <button onclick="openCompetenceDetails('maintenir')" class="text-left text-sm font-medium text-slate-500">Maintenir</button>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        
+        <!-- Contenu Principal -->
+        <main class="flex-grow pt-20">
+            <!-- Section Accueil -->
+            <section id="section-accueil" class="section-content min-h-[calc(100vh-80px)] flex items-center px-6 relative overflow-hidden hidden">
+                <div class="absolute top-20 -left-20 w-96 h-96 bg-indigo-200 rounded-full mix-blend-multiply filter blur-[100px] opacity-50"></div>
+                <div class="absolute bottom-20 -right-20 w-96 h-96 bg-violet-200 rounded-full mix-blend-multiply filter blur-[100px] opacity-50"></div>
+                
+                <div class="max-w-6xl mx-auto w-full grid md:grid-cols-2 gap-16 items-center relative z-10 py-12">
+                    <div class="space-y-8">
+                        <div class="inline-flex items-center gap-3 px-4 py-2 rounded-full bg-white border border-indigo-100 shadow-sm text-indigo-700 text-sm font-semibold">
+                            <span class="relative flex h-3 w-3">
+                                <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-indigo-400 opacity-75"></span>
+                                <span class="relative inline-flex rounded-full h-3 w-3 bg-indigo-500"></span>
+                            </span>
+                            Recherche de stage : 8 à 12 sem. (Dès le 7 avril)
+                        </div>
+                        
+                        <div class="space-y-4">
+                            <h1 class="text-3xl md:text-5xl font-extrabold text-slate-900 tracking-tight leading-tight">
+                                Bonjour, je suis <br class="hidden md:block"/>
+                                <span class="text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-violet-600">Dorian Chaduc.</span>
+                            </h1>
+                            <h2 class="text-lg md:text-xl font-semibold text-slate-700">
+                                Futur Technicien Supérieur en <span class="text-indigo-600">GEII</span>
+                            </h2>
+                            <p class="text-base md:text-lg text-slate-600 max-w-lg leading-relaxed text-justify">
+                                Étudiant en 2ème année à l'IUT de Bordeaux (Parcours Électricité et Maîtrise de l'Énergie). Passionné par la conception électronique, l'automatisation et les systèmes embarqués.
+                            </p>
+                        </div>
+                        
+                        <div class="flex flex-wrap gap-3">
+                            <span class="px-4 py-2 bg-slate-100 text-slate-700 rounded-lg text-sm font-medium flex items-center gap-2">
+                                💡 Électronique
+                            </span>
+                            <span class="px-4 py-2 bg-slate-100 text-slate-700 rounded-lg text-sm font-medium flex items-center gap-2">
+                                ⚡ Énergie
+                            </span>
+                            <span class="px-4 py-2 bg-slate-100 text-slate-700 rounded-lg text-sm font-medium flex items-center gap-2">
+                                ⚙️ Systèmes Embarqués
+                            </span>
+                        </div>
+                        
+                        <div class="flex flex-wrap gap-4 pt-2">
+                            <button onclick="changeSection('apropos')" class="px-8 py-3.5 bg-slate-900 text-white rounded-xl font-bold shadow-xl shadow-slate-200 hover:bg-indigo-600 hover:shadow-indigo-200 hover:-translate-y-1 transition-all duration-300 flex items-center gap-2">
+                                Découvrir mon profil <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                            </button>
+                            <div class="flex items-center gap-3">
+                                <a href="mailto:dorianchaduc@gmail.com" class="p-3.5 bg-white border border-slate-200 text-slate-600 rounded-xl hover:text-indigo-600 hover:border-indigo-200 hover:bg-indigo-50 transition-all duration-300 shadow-sm">
+                                    ✉️
+                                </a>
+                                <a href="#" class="p-3.5 bg-white border border-slate-200 text-slate-600 rounded-xl hover:text-indigo-600 hover:border-indigo-200 hover:bg-indigo-50 transition-all duration-300 shadow-sm">
+                                    💼
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="relative hidden md:block">
+                        <div class="relative w-full aspect-square max-w-md mx-auto">
+                            <div class="absolute inset-4 bg-gradient-to-tr from-indigo-100 to-violet-50 rounded-full border border-indigo-50 shadow-inner"></div>
+                            <div class="absolute inset-8 rounded-3xl overflow-hidden shadow-2xl transform rotate-3 hover:rotate-0 transition-transform duration-500 bg-white">
+                                <img src="https://images.unsplash.com/photo-1517077304055-6e89abbf09b0?auto=format&fit=crop&q=80&w=800" alt="Électronique Concept" class="w-full h-full object-cover opacity-90 hover:opacity-100 transition-opacity" />
+                            </div>
+                            <div class="absolute top-12 -left-4 bg-white p-4 rounded-2xl shadow-xl border border-slate-100">
+                                🏆
+                            </div>
+                            <div class="absolute bottom-16 -right-4 bg-white p-4 rounded-2xl shadow-xl border border-slate-100">
+                                💾
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Section À Propos -->
+            <section id="section-apropos" class="section-content py-12 md:py-24 bg-white px-6 min-h-[calc(100vh-80px)] hidden">
+                <div class="max-w-4xl mx-auto text-center space-y-8">
+                    <h2 class="text-3xl font-bold flex items-center justify-center gap-3">
+                        👤 À Propos de moi
+                    </h2>
+                    <div class="grid md:grid-cols-3 gap-8 text-left mt-12">
+                        <div class="md:col-span-2 space-y-6">
+                            <p class="text-lg text-slate-600 leading-relaxed text-justify">
+                                Actuellement en deuxième année de <strong>BUT Génie Électrique et Informatique Industrielle (GEII)</strong> à l'Université de Bordeaux, je suis le parcours Électricité et Maîtrise de l'Énergie (EME). Au cours de ma formation, j'ai développé de solides compétences en analyse des besoins, sélection de composants et conception de circuits électroniques.
+                            </p>
+                            <p class="text-lg text-slate-600 leading-relaxed text-justify">
+                                Je suis activement à la recherche d'un <strong>stage de 8 à 12 semaines à partir du 7 avril</strong>. Mon objectif est d'intégrer une équipe pour travailler sur l'étude, la production ou la maintenance des systèmes de conversion de l'énergie électrique.
+                            </p>
+                            <p class="text-lg text-slate-600 leading-relaxed text-justify">
+                                En parallèle de mes études, je pratique l'<strong>athlétisme à un niveau national</strong> depuis 11 ans. J'ai notamment participé aux championnats de France (en salle et en extérieur) et je m'investis en tant que juge bénévole lors des compétitions. Ce sport m'a appris la rigueur, la détermination et le dépassement de soi, des qualités que j'advance au quotidien dans mes projets techniques.
+                            </p>
+                            
+                            <div class="flex gap-8 py-4 border-y border-slate-100">
+                                <div>
+                                    <div class="text-2xl font-bold text-indigo-600">11 ans</div>
+                                    <div class="text-sm text-slate-500 uppercase tracking-wider font-semibold">Athlétisme</div>
+                                </div>
+                                <div>
+                                    <div class="text-2xl font-bold text-indigo-600">Permis B</div>
+                                    <div class="text-sm text-slate-500 uppercase tracking-wider font-semibold">Véhiculé</div>
+                                </div>
+                                <div>
+                                    <div class="text-2xl font-bold text-indigo-600">7 Avril</div>
+                                    <div class="text-sm text-slate-500 uppercase tracking-wider font-semibold">Disponibilité</div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-slate-50 p-6 rounded-2xl space-y-4 h-fit">
+                            <h3 class="font-bold text-slate-800 border-b border-slate-200 pb-2">Mes Centres d'intérêts</h3>
+                            <ul class="space-y-2 text-sm text-slate-600 text-justify">
+                                <li><strong class="text-indigo-600">Sport :</strong> Athlétisme (compétitions nationales).</li>
+                                <li><strong class="text-indigo-600">Voyages :</strong> Découverte du Canada, Espagne, Norvège, États-Unis.</li>
+                                <li><strong class="text-indigo-600">Culture :</strong> Cinéma, films et séries.</li>
+                                <li><strong class="text-indigo-600">Personnel :</strong> Passer du temps en famille.</li>
+                            </ul>
+                            
+                            <div class="mt-6 pt-4 border-t border-slate-200 space-y-3">
+                                <div class="text-sm">
+                                    <span class="block text-slate-400 font-semibold mb-1">Localisation</span>
+                                    <span class="font-medium text-slate-800">Saint Aubin de Médoc, FR</span>
+                                </div>
+                                <div class="text-sm">
+                                    <span class="block text-slate-400 font-semibold mb-1">Téléphone</span>
+                                    <span class="font-medium text-slate-800">+33 6 14 69 16 55</span>
+                                </div>
+                                <div class="text-sm">
+                                    <span class="block text-slate-400 font-semibold mb-1">Email</span>
+                                    <span class="font-medium text-indigo-600 break-words">dorianchaduc@gmail.com</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Section Expériences -->
+            <section id="section-experiences" class="section-content py-12 md:py-24 px-6 bg-slate-50 min-h-[calc(100vh-80px)] hidden">
+                <div class="max-w-4xl mx-auto">
+                    <h2 class="text-3xl font-bold mb-12 flex items-center gap-3">
+                        💼 Parcours & Formation
+                    </h2>
+                    <div class="space-y-12 relative before:absolute before:left-0 md:before:left-1/2 before:w-px before:h-full before:bg-slate-200">
+                        <div class="relative flex flex-col md:flex-row gap-8">
+                            <div class="hidden md:block absolute left-1/2 -translate-x-1/2 w-4 h-4 bg-indigo-600 rounded-full border-4 border-white"></div>
+                            <div class="w-full md:w-1/2 bg-white p-8 rounded-2xl shadow-sm border border-slate-100 hover:shadow-md transition-shadow">
+                                <span class="text-indigo-600 font-bold text-sm">Aujourd'hui</span>
+                                <h3 class="text-xl font-bold mt-1">Étudiant 2ème année BUT GEII</h3>
+                                <div class="text-slate-500 font-medium mb-4">Université de Bordeaux - IUT (Gradignan)</div>
+                                <p class="text-slate-600 mb-6 text-justify">Spécialisation dans le parcours EME (Électricité et Maîtrise de l'Énergie). Apprentissage approfondi en électronique, systèmes embarqués et automatismes à travers de nombreux projets concrets.</p>
+                                <div class="flex flex-wrap gap-2">
+                                    <span class="px-2 py-1 bg-slate-100 text-slate-600 text-xs rounded-md font-medium">Électronique</span>
+                                    <span class="px-2 py-1 bg-slate-100 text-slate-600 text-xs rounded-md font-medium">Énergie</span>
+                                    <span class="px-2 py-1 bg-slate-100 text-slate-600 text-xs rounded-md font-medium">Systèmes Embarqués</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="relative flex flex-col md:flex-row-reverse gap-8">
+                            <div class="hidden md:block absolute left-1/2 -translate-x-1/2 w-4 h-4 bg-indigo-600 rounded-full border-4 border-white"></div>
+                            <div class="w-full md:w-1/2 bg-white p-8 rounded-2xl shadow-sm border border-slate-100 hover:shadow-md transition-shadow">
+                                <span class="text-indigo-600 font-bold text-sm">Stage (2 mois) - BUT2</span>
+                                <h3 class="text-xl font-bold mt-1">Stagiaire Maintenance</h3>
+                                <div class="text-slate-500 font-medium mb-4">Engie Solutions</div>
+                                <p class="text-slate-600 mb-6 text-justify">Maintenance d'un data center au cours de la deuxième année de BUT GEII.</p>
+                                <div class="flex flex-wrap gap-2">
+                                    <span class="px-2 py-1 bg-slate-100 text-slate-600 text-xs rounded-md font-medium">Maintenance</span>
+                                    <span class="px-2 py-1 bg-slate-100 text-slate-600 text-xs rounded-md font-medium">Data Center</span>
+                                    <span class="px-2 py-1 bg-slate-100 text-slate-600 text-xs rounded-md font-medium">Engie Solutions</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="relative flex flex-col md:flex-row gap-8">
+                            <div class="hidden md:block absolute left-1/2 -translate-x-1/2 w-4 h-4 bg-indigo-600 rounded-full border-4 border-white"></div>
+                            <div class="w-full md:w-1/2 bg-white p-8 rounded-2xl shadow-sm border border-slate-100 hover:shadow-md transition-shadow">
+                                <span class="text-indigo-600 font-bold text-sm">Depuis 11 ans</span>
+                                <h3 class="text-xl font-bold mt-1">Athlète de Niveau National</h3>
+                                <div class="text-slate-500 font-medium mb-4">Fédération Française d'Athlétisme</div>
+                                <p class="text-slate-600 mb-6 text-justify">Pratique intensive de l'athlétisme avec participation aux championnats de France en salle et en extérieur. Juge bénévole lors des compétitions. Développement d'une grande rigueur et d'un fort esprit d'équipe.</p>
+                                <div class="flex flex-wrap gap-2">
+                                    <span class="px-2 py-1 bg-slate-100 text-slate-600 text-xs rounded-md font-medium">Compétition</span>
+                                    <span class="px-2 py-1 bg-slate-100 text-slate-600 text-xs rounded-md font-medium">Rigueur</span>
+                                    <span class="px-2 py-1 bg-slate-100 text-slate-600 text-xs rounded-md font-medium">Esprit d'équipe</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="relative flex flex-col md:flex-row-reverse gap-8">
+                            <div class="hidden md:block absolute left-1/2 -translate-x-1/2 w-4 h-4 bg-indigo-600 rounded-full border-4 border-white"></div>
+                            <div class="w-full md:w-1/2 bg-white p-8 rounded-2xl shadow-sm border border-slate-100 hover:shadow-md transition-shadow">
+                                <span class="text-indigo-600 font-bold text-sm">Obtenu</span>
+                                <h3 class="text-xl font-bold mt-1">Baccalauréat Général</h3>
+                                <div class="text-slate-500 font-medium mb-4">Lycée</div>
+                                <p class="text-slate-600 mb-6 text-justify">Obtention du baccalauréat avec spécialités scientifiques : Mathématiques, Physique-Chimie, et NSI (Numérique et Sciences Informatiques).</p>
+                                <div class="flex flex-wrap gap-2">
+                                    <span class="px-2 py-1 bg-slate-100 text-slate-600 text-xs rounded-md font-medium">Mathématiques</span>
+                                    <span class="px-2 py-1 bg-slate-100 text-slate-600 text-xs rounded-md font-medium">Physique</span>
+                                    <span class="px-2 py-1 bg-slate-100 text-slate-600 text-xs rounded-md font-medium">NSI</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Section Projets -->
+            <section id="section-projets" class="section-content py-12 md:py-24 px-6 bg-slate-50 min-h-[calc(100vh-80px)] hidden">
+                <div class="max-w-5xl mx-auto">
+                    <div id="projects-list-view">
+                        <div class="bg-white p-8 md:p-12 rounded-[2rem] shadow-sm border border-slate-100 max-w-3xl mx-auto mt-10 animate-in fade-in zoom-in duration-500 relative z-10">
+                            <div class="w-20 h-20 bg-indigo-50 rounded-2xl flex items-center justify-center mx-auto mb-6 transform rotate-3 hover:rotate-0 transition-transform">
+                                💻
+                            </div>
+                            <h2 class="text-3xl md:text-4xl font-extrabold text-slate-900 mb-4 text-center">Mes Projets GEII</h2>
+                            <p class="text-lg text-slate-600 mb-10 leading-relaxed text-center">
+                                Sélectionnez un projet ci-dessous pour explorer mon travail, de l'analyse fonctionnelle jusqu'au rapport final.
+                            </p>
+                            
+                            <div class="relative text-left max-w-xl mx-auto">
+                                <button onclick="toggleProjectDropdown()" class="w-full bg-white border-2 border-slate-200 text-slate-800 py-5 px-6 rounded-2xl font-bold text-lg focus:outline-none focus:ring-4 focus:ring-indigo-600/20 focus:border-indigo-600 shadow-sm hover:border-indigo-400 transition-all flex justify-between items-center group">
+                                    <span class="flex items-center gap-3">
+                                        🔍 Rechercher une réalisation...
+                                    </span>
+                                    <div id="dropdown-chevron" class="p-2 rounded-xl transition-colors bg-slate-100 text-slate-500 group-hover:bg-indigo-50 group-hover:text-indigo-500">
+                                        <svg class="w-6 h-6 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path></svg>
+                                    </div>
+                                </button>
+                                
+                                <div id="projects-dropdown" class="absolute top-full left-0 w-full mt-4 bg-white rounded-2xl shadow-xl border border-slate-100 overflow-hidden transition-all duration-300 transform origin-top scale-y-95 opacity-0 invisible z-50">
+                                    <button onclick="openProjectDetails('s1')" class="w-full text-left px-6 py-5 hover:bg-indigo-50/50 transition-all flex items-center justify-between group border-b border-slate-100">
+                                        <div class="flex items-center gap-5">
+                                            <div class="w-16 h-16 rounded-xl overflow-hidden shadow-sm shrink-0 bg-slate-200">
+                                                <img src="https://images.unsplash.com/photo-1517077304055-6e89abbf09b0?auto=format&fit=crop&q=80&w=800" alt="S1" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
+                                            </div>
+                                            <div>
+                                                <div class="text-xs font-bold text-indigo-600 mb-1 uppercase tracking-wider">ÉLECTRONIQUE & CONCEPTION</div>
+                                                <div class="text-lg font-bold text-slate-800 group-hover:text-indigo-700 transition-colors">SAE Le thermomètre de bain S1</div>
+                                            </div>
+                                        </div>
+                                        <div class="w-10 h-10 shrink-0 rounded-full bg-white border border-slate-200 flex items-center justify-center group-hover:bg-indigo-600 group-hover:border-indigo-600 group-hover:text-white text-slate-400 transition-all shadow-sm transform group-hover:translate-x-1">
+                                            →
+                                        </div>
+                                    </button>
+                                    <button onclick="openProjectDetails('s2')" class="w-full text-left px-6 py-5 hover:bg-indigo-50/50 transition-all flex items-center justify-between group border-b border-slate-100">
+                                        <div class="flex items-center gap-5">
+                                            <div class="w-16 h-16 rounded-xl overflow-hidden shadow-sm shrink-0 bg-slate-200">
+                                                <img src="https://images.unsplash.com/photo-1517077304055-6e89abbf09b0?auto=format&fit=crop&q=80&w=800" alt="S2" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
+                                            </div>
+                                            <div>
+                                                <div class="text-xs font-bold text-indigo-600 mb-1 uppercase tracking-wider">SYSTÈMES EMBARQUÉS & ÉLECTRONIQUE</div>
+                                                <div class="text-lg font-bold text-slate-800 group-hover:text-indigo-700 transition-colors">SAE Le kart à hélice S2</div>
+                                            </div>
+                                        </div>
+                                        <div class="w-10 h-10 shrink-0 rounded-full bg-white border border-slate-200 flex items-center justify-center group-hover:bg-indigo-600 group-hover:border-indigo-600 group-hover:text-white text-slate-400 transition-all shadow-sm transform group-hover:translate-x-1">
+                                            →
+                                        </div>
+                                    </button>
+                                    <button onclick="openProjectDetails('s3')" class="w-full text-left px-6 py-5 hover:bg-indigo-50/50 transition-all flex items-center justify-between group">
+                                        <div class="flex items-center gap-5">
+                                            <div class="w-16 h-16 rounded-xl overflow-hidden shadow-sm shrink-0 bg-slate-200">
+                                                <img src="https://images.unsplash.com/photo-1517077304055-6e89abbf09b0?auto=format&fit=crop&q=80&w=800" alt="S3" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
+                                            </div>
+                                            <div>
+                                                <div class="text-xs font-bold text-indigo-600 mb-1 uppercase tracking-wider">ROBOTIQUE & AUTOMATISME</div>
+                                                <div class="text-lg font-bold text-slate-800 group-hover:text-indigo-700 transition-colors">SAE Le Mini robot sumo S3</div>
+                                            </div>
+                                        </div>
+                                        <div class="w-10 h-10 shrink-0 rounded-full bg-white border border-slate-200 flex items-center justify-center group-hover:bg-indigo-600 group-hover:border-indigo-600 group-hover:text-white text-slate-400 transition-all shadow-sm transform group-hover:translate-x-1">
+                                            →
+                                        </div>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div id="project-detail-view" class="hidden">
+                        <button onclick="showProjectsList()" class="mb-8 flex items-center gap-2 text-slate-500 hover:text-indigo-600 font-semibold transition-colors px-4 py-2 rounded-xl hover:bg-white border border-transparent hover:border-indigo-100 shadow-sm">
+                            ← Retour à la sélection des projets
+                        </button>
+                        
+                        <div class="bg-white rounded-[2rem] shadow-sm border border-slate-100 overflow-hidden animate-in fade-in slide-in-from-bottom-4 duration-500">
+                            <div id="project-image" class="w-full h-64 md:h-[450px] relative bg-slate-200"></div>
+                            
+                            <div class="p-8 md:p-12">
+                                <h2 id="project-title" class="text-3xl md:text-5xl font-extrabold text-slate-900 mb-6"></h2>
+                                <p id="project-desc" class="text-lg text-slate-600 leading-relaxed text-justify mb-8"></p>
+                                
+                                <div class="mb-12">
+                                    <h4 class="text-sm font-bold text-slate-400 uppercase tracking-wider mb-4">Compétences mobilisées</h4>
+                                    <div id="project-tags" class="flex flex-wrap gap-3"></div>
+                                </div>
+                                
+                                <div class="pt-10 border-t border-slate-100">
+                                    <h4 class="text-sm font-bold text-slate-400 uppercase tracking-wider mb-6">Livrables et Documents du projet</h4>
+                                    <div id="project-documents" class="grid grid-cols-1 sm:grid-cols-2 gap-4"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Section Compétences -->
+            <section id="section-competences" class="section-content py-12 md:py-24 px-6 bg-slate-50 min-h-[calc(100vh-80px)] hidden">
+                <div class="max-w-6xl mx-auto">
+                    <div id="competences-list-view">
+                        <div class="animate-in fade-in zoom-in duration-500">
+                            <div class="text-center mb-16">
+                                <h2 class="text-3xl md:text-5xl font-extrabold flex items-center justify-center gap-4 mb-6 text-slate-900">
+                                    💾 Mes Compétences GEII
+                                </h2>
+                                <p class="text-slate-500 max-w-2xl mx-auto text-lg">
+                                    Sélectionnez un domaine de compétence ci-dessous pour découvrir le détail des apprentissages et accéder à mes justificatifs PDF.
+                                </p>
+                            </div>
+                            
+                            <div class="grid md:grid-cols-3 gap-8">
+                                <div onclick="openCompetenceDetails('concevoir')" class="bg-white rounded-[2rem] p-8 md:p-10 shadow-sm hover:shadow-xl border border-slate-200 hover:border-indigo-400 transition-all duration-300 cursor-pointer group flex flex-col items-center text-center">
+                                    <div class="w-20 h-20 rounded-2xl flex items-center justify-center mb-8 transition-all duration-300 transform group-hover:scale-110 group-hover:-rotate-3 bg-indigo-50 group-hover:bg-indigo-600 text-indigo-600 group-hover:text-white">
+                                        🏆
+                                    </div>
+                                    <h3 class="text-2xl font-bold text-slate-900 mb-4">Concevoir</h3>
+                                    <p class="text-slate-600 leading-relaxed mb-8 flex-grow">
+                                        Concevoir la partie physique ou logicielle d'un système embarqué ou d'une installation industrielle.
+                                    </p>
+                                    <div class="inline-flex items-center gap-2 font-bold text-sm tracking-wide uppercase transition-colors text-indigo-600 group-hover:text-indigo-700">
+                                        Voir les détails →
+                                    </div>
+                                </div>
+                                
+                                <div onclick="openCompetenceDetails('verifier')" class="bg-white rounded-[2rem] p-8 md:p-10 shadow-sm hover:shadow-xl border border-slate-200 hover:border-emerald-400 transition-all duration-300 cursor-pointer group flex flex-col items-center text-center">
+                                    <div class="w-20 h-20 rounded-2xl flex items-center justify-center mb-8 transition-all duration-300 transform group-hover:scale-110 group-hover:-rotate-3 bg-emerald-50 group-hover:bg-emerald-600 text-emerald-600 group-hover:text-white">
+                                        ✓
+                                    </div>
+                                    <h3 class="text-2xl font-bold text-slate-900 mb-4">Vérifier</h3>
+                                    <p class="text-slate-600 leading-relaxed mb-8 flex-grow">
+                                        Vérifier et valider un système embarqué ou une installation industrielle.
+                                    </p>
+                                    <div class="inline-flex items-center gap-2 font-bold text-sm tracking-wide uppercase transition-colors text-emerald-600 group-hover:text-emerald-700">
+                                        Voir les détails →
+                                    </div>
+                                </div>
+                                
+                                <div onclick="openCompetenceDetails('maintenir')" class="bg-white rounded-[2rem] p-8 md:p-10 shadow-sm hover:shadow-xl border border-slate-200 hover:border-orange-400 transition-all duration-300 cursor-pointer group flex flex-col items-center text-center">
+                                    <div class="w-20 h-20 rounded-2xl flex items-center justify-center mb-8 transition-all duration-300 transform group-hover:scale-110 group-hover:-rotate-3 bg-orange-50 group-hover:bg-orange-600 text-orange-600 group-hover:text-white">
+                                        🔧
+                                    </div>
+                                    <h3 class="text-2xl font-bold text-slate-900 mb-4">Maintenir</h3>
+                                    <p class="text-slate-600 leading-relaxed mb-8 flex-grow">
+                                        Assurer le maintien en condition opérationnelle d'un système embarqué ou d'une installation industrielle.
+                                    </p>
+                                    <div class="inline-flex items-center gap-2 font-bold text-sm tracking-wide uppercase transition-colors text-orange-600 group-hover:text-orange-700">
+                                        Voir les détails →
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div id="competence-detail-view" class="hidden animate-in fade-in slide-in-from-bottom-4 duration-500 max-w-4xl mx-auto">
+                        <button onclick="showCompetencesList()" class="mb-8 flex items-center gap-2 text-slate-500 hover:text-indigo-600 font-semibold transition-colors px-4 py-2 rounded-xl hover:bg-white border border-transparent hover:border-indigo-100 shadow-sm">
+                            ← Retour aux domaines de compétences
+                        </button>
+                        
+                        <div class="bg-white p-8 md:p-12 rounded-[2rem] shadow-sm border border-slate-100" id="competence-content"></div>
+                    </div>
+                </div>
+            </section>
+        </main>
+        
+        <!-- Footer -->
+        <footer class="py-12 bg-slate-900 text-slate-400 px-6 mt-auto">
+            <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
+                <div class="text-white font-bold text-xl">DORIAN CHADUC.</div>
+                <div class="text-sm">© 2026 Tous droits réservés. Créé avec passion.</div>
+                <div class="flex gap-6">
+                    <a href="mailto:dorianchaduc@gmail.com" class="hover:text-white transition-colors">Contact</a>
+                </div>
+            </div>
+        </footer>
+    </div>
+    
+    <script>
+        // État global
+        let currentSection = 'accueil';
+        let currentProject = null;
+        let currentCompetence = null;
+        let isMobileMenuOpen = false;
+        let isDropdownOpen = false;
+        
+        // Données des projets
+        const projectsData = {
+            s1: {
+                title: 'SAE Le thermomètre de bain S1',
+                category: 'ÉLECTRONIQUE & CONCEPTION',
+                desc: "Conception et réalisation d'un thermomètre de bain pour bébé (Baby Corporation). Ce projet de premier semestre a permis de mettre en pratique l'analyse fonctionnelle et le prototypage pour respecter un cahier des charges strict (détection < 36°C et > 39°C, autonomie > 24h, coût < 20€). Au sein d'une équipe de 4, je me suis spécifiquement chargé du développement des blocs 'Action' et 'Traitement' (utilisation d'amplificateurs opérationnels en comparateur, dimensionnement de composants).",
+                tags: ["Capteurs", "Prototypage", "Amplificateurs", "Composants"],
+                image: "https://images.unsplash.com/photo-1517077304055-6e89abbf09b0?auto=format&fit=crop&q=80&w=800",
+                documents: [
+                    { name: "Dossier de Conception", icon: "💡", file: "Dossier_Conception_S1.pdf" },
+                    { name: "Dossier de Fabrication", icon: "🔧", file: "Dossier_Fabrication_S1.pdf" },
+                    { name: "Dossier de Vérification", icon: "✓", file: "Dossier_Verification_S1.pdf" },
+                    { name: "Rapport Final", icon: "📄", file: "SAE_thermometre_de_bain_pour_bebe.pdf" }
+                ]
+            },
+            s2: {
+                title: 'SAE Le kart à hélice S2',
+                category: 'SYSTÈMES EMBARQUÉS & ÉLECTRONIQUE',
+                desc: "Conception en équipe d'un kart propulsé par hélice. J'ai spécifiquement travaillé sur la conception de la carte électronique réceptrice : réception et analyse du signal infrarouge envoyé par le pilote, puis contrôle de la puissance du moteur, de la direction et du klaxon. Un projet m'ayant permis d'appréhender la conception de bout en bout d'un produit.",
+                tags: ["Cartes Électroniques", "Infrarouge", "Travail en équipe", "Validation des essais"],
+                image: "https://images.unsplash.com/photo-1517077304055-6e89abbf09b0?auto=format&fit=crop&q=80&w=800",
+                documents: [
+                    { name: "Dossier de Conception", icon: "💡", file: "KAH_DDC_EQ33.docx" },
+                    { name: "Dossier de Fabrication", icon: "🔧", file: "Dossier_Fabrication_S2.pdf" },
+                    { name: "Dossier de Vérification", icon: "✓", file: "Dossier_Verification_S2.pdf" },
+                    { name: "Rapport Final", icon: "📄", file: "SAE_Le_kart_a_helice_KAH.pdf" }
+                ]
+            },
+            s3: {
+                title: 'SAE Le Mini robot sumo S3',
+                category: 'ROBOTIQUE & AUTOMATISME',
+                desc: "Création d'un mini robot sumo autonome pour le semestre 3 (S3). Intégration de capteurs, programmation de la logique de combat et optimisation de la motorisation pour respecter un cahier des charges strict.",
+                tags: ["Robotique", "Programmation", "Intégration système"],
+                image: "https://images.unsplash.com/photo-1517077304055-6e89abbf09b0?auto=format&fit=crop&q=80&w=800",
+                documents: [
+                    { name: "Dossier de Conception", icon: "💡", file: "B3_DDC_EQ34_V4.pdf" },
+                    { name: "Dossier de Fabrication", icon: "🔧", file: "Dossier_Fabrication_S3.pdf" },
+                    { name: "Dossier de Vérification", icon: "✓", file: "Dossier_Verification_S3.pdf" },
+                    { name: "Rapport Final", icon: "📄", file: "Rapport_Mini_Robot_Sumo_S3.pdf" }
+                ]
+            }
+        };
+        
+        // Fonctions de navigation
+        function changeSection(sectionId) {
+            currentSection = sectionId;
+            document.querySelectorAll('.section-content').forEach(s => s.classList.add('hidden'));
+            document.getElementById(`section-${sectionId}`).classList.remove('hidden');
+            
+            // Mise à jour navigation
+            document.querySelectorAll('.nav-link').forEach(link => {
+                if (link.dataset.section === sectionId) {
+                    link.classList.add('text-indigo-600', 'border-b-2', 'border-indigo-600', 'pb-1');
+                } else {
+                    link.classList.remove('text-indigo-600', 'border-b-2', 'border-indigo-600', 'pb-1');
+                }
+            });
+            
+            if (isMobileMenuOpen) toggleMobileMenu();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+        
+        function toggleMobileMenu() {
+            isMobileMenuOpen = !isMobileMenuOpen;
+            document.getElementById('mobile-menu').classList.toggle('hidden');
+            document.getElementById('menu-icon').innerHTML = isMobileMenuOpen 
+                ? '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>'
+                : '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>';
+        }
+        
+        function toggleMobileProjects() {
+            document.getElementById('mobile-projects').classList.toggle('hidden');
+            document.getElementById('projects-chevron').classList.toggle('rotate-180');
+        }
+        
+        function toggleMobileCompetences() {
+            document.getElementById('mobile-competences').classList.toggle('hidden');
+            document.getElementById('competences-chevron').classList.toggle('rotate-180');
+        }
+        
+        // Gestion des projets
+        function toggleProjectDropdown() {
+            isDropdownOpen = !isDropdownOpen;
+            const dropdown = document.getElementById('projects-dropdown');
+            const chevron = document.getElementById('dropdown-chevron').querySelector('svg');
+            
+            if (isDropdownOpen) {
+                dropdown.classList.remove('scale-y-95', 'opacity-0', 'invisible');
+                dropdown.classList.add('scale-y-100', 'opacity-100', 'visible');
+                chevron.classList.add('rotate-180');
+            } else {
+                dropdown.classList.add('scale-y-95', 'opacity-0', 'invisible');
+                dropdown.classList.remove('scale-y-100', 'opacity-100', 'visible');
+                chevron.classList.remove('rotate-180');
+            }
+        }
+        
+        function openProjectDetails(projectId) {
+            currentProject = projectId;
+            const project = projectsData[projectId];
+            
+            // Image
+            const imageDiv = document.getElementById('project-image');
+            imageDiv.innerHTML = `<img src="${project.image}" class="w-full h-full object-cover" alt="${project.title}" /><div class="absolute top-6 left-6 md:top-8 md:left-8"><span class="px-4 py-2 bg-indigo-600/90 backdrop-blur-sm text-white text-sm font-bold rounded-full shadow-lg tracking-wider">${project.category}</span></div>`;
+            
+            // Titre et description
+            document.getElementById('project-title').textContent = project.title;
+            document.getElementById('project-desc').textContent = project.desc;
+            
+            // Tags
+            const tagsDiv = document.getElementById('project-tags');
+            tagsDiv.innerHTML = project.tags.map(tag => 
+                `<div class="flex items-center text-sm font-semibold text-indigo-700 bg-indigo-50 border border-indigo-100 px-4 py-2 rounded-lg shadow-sm">${tag}</div>`
+            ).join('');
+            
+            // Documents
+            const docsDiv = document.getElementById('project-documents');
+            docsDiv.innerHTML = project.documents.map(doc => 
+                `<a href="${doc.file}" target="_blank" rel="noopener noreferrer" class="flex items-center gap-4 p-5 rounded-xl border border-slate-200 hover:border-indigo-300 hover:bg-indigo-50 transition-all group bg-white shadow-sm hover:shadow-md">
+                    <div class="p-3 bg-indigo-100 text-indigo-600 rounded-xl group-hover:bg-indigo-600 group-hover:text-white transition-colors">${doc.icon}</div>
+                    <div class="flex flex-col"><span class="font-bold text-slate-800 group-hover:text-indigo-700 text-lg">${doc.name}</span><span class="text-sm text-slate-500">Ouvrir le PDF</span></div>
+                </a>`
+            ).join('');
+            
+            // Affichage
+            document.getElementById('projects-list-view').classList.add('hidden');
+            document.getElementById('project-detail-view').classList.remove('hidden');
+            changeSection('projets');
+        }
+        
+        function showProjectsList() {
+            document.getElementById('projects-list-view').classList.remove('hidden');
+            document.getElementById('project-detail-view').classList.add('hidden');
+        }
+        
+        // Gestion des compétences
+        function openCompetenceDetails(competenceId) {
+            currentCompetence = competenceId;
+            
+            let content = '';
+            
+            if (competenceId === 'concevoir') {
+                content = `
+                    <div class="flex items-center gap-4 mb-8 pb-8 border-b border-slate-100">
+                        <div class="p-4 bg-indigo-100 text-indigo-600 rounded-2xl">🏆</div>
+                        <div>
+                            <h2 class="text-3xl font-extrabold text-slate-900">Concevoir</h2>
+                            <p class="text-slate-500 font-medium">Concevoir la partie physique ou logicielle d'un système embarqué ou d'une installation industrielle.</p>
+                        </div>
+                    </div>
+                    <div class="bg-indigo-50/50 border-l-4 border-indigo-600 p-6 rounded-r-2xl space-y-3 mb-8">
+                        <h3 class="font-extrabold text-indigo-900 text-base tracking-wide uppercase">Justification de l'acquisition</h3>
+                        <p class="text-slate-700 font-medium text-lg leading-relaxed text-justify">
+                            J'ai validé cette compétence transversale car j'ai systématiquement défini l'architecture fonctionnelle de chaque système physique étudié avant d'effectuer tout choix de composants ou d'écriture logicielle.
+                        </p>
+                    </div>
+                    <div class="space-y-6">
+                        <h3 class="text-xl font-bold text-slate-800 border-b border-slate-200 pb-3">Compétences - Concevoir</h3>
+                        <div class="space-y-2">
+                            <button onclick="openProof('C.1')" class="flex gap-4 items-start w-full text-left p-3.5 -mx-3.5 rounded-xl hover:bg-white hover:shadow-sm hover:ring-1 hover:ring-slate-100 transition-all group cursor-pointer">
+                                <span class="shrink-0 mt-0.5 font-bold text-sm px-2.5 py-1.5 rounded transition-colors duration-300 bg-indigo-50 text-indigo-600 group-hover:bg-indigo-600 group-hover:text-white">C.1</span>
+                                <span class="leading-relaxed text-slate-700 text-base text-justify transition-colors duration-300">J'identifie les fonctions demandées à la lecture du cahier des charges</span>
+                            </button>
+                            <button onclick="openProof('C.2')" class="flex gap-4 items-start w-full text-left p-3.5 -mx-3.5 rounded-xl hover:bg-white hover:shadow-sm hover:ring-1 hover:ring-slate-100 transition-all group cursor-pointer">
+                                <span class="shrink-0 mt-0.5 font-bold text-sm px-2.5 py-1.5 rounded transition-colors duration-300 bg-indigo-50 text-indigo-600 group-hover:bg-indigo-600 group-hover:text-white">C.2</span>
+                                <span class="leading-relaxed text-slate-700 text-base text-justify transition-colors duration-300">Je propose une solution technique pour répondre à une fonction</span>
+                            </button>
+                            <button onclick="openProof('C.3')" class="flex gap-4 items-start w-full text-left p-3.5 -mx-3.5 rounded-xl hover:bg-white hover:shadow-sm hover:ring-1 hover:ring-slate-100 transition-all group cursor-pointer">
+                                <span class="shrink-0 mt-0.5 font-bold text-sm px-2.5 py-1.5 rounded transition-colors duration-300 bg-indigo-50 text-indigo-600 group-hover:bg-indigo-600 group-hover:text-white">C.3</span>
+                                <span class="leading-relaxed text-slate-700 text-base text-justify transition-colors duration-300">J'affine une solution technique en m'appuyant sur un maquettage numérique et/ou matériel</span>
+                            </button>
+                            <button onclick="openProof('C.4')" class="flex gap-4 items-start w-full text-left p-3.5 -mx-3.5 rounded-xl hover:bg-white hover:shadow-sm hover:ring-1 hover:ring-slate-100 transition-all group cursor-pointer">
+                                <span class="shrink-0 mt-0.5 font-bold text-sm px-2.5 py-1.5 rounded transition-colors duration-300 bg-indigo-50 text-indigo-600 group-hover:bg-indigo-600 group-hover:text-white">C.4</span>
+                                <span class="leading-relaxed text-slate-700 text-base text-justify transition-colors duration-300">Je rédige un dossier de conception et de fabrication</span>
+                            </button>
+                        </div>
+                    </div>
+                `;
+            } else if (competenceId === 'verifier') {
+                content = `
+                    <div class="flex items-center gap-4 mb-8 pb-8 border-b border-slate-100">
+                        <div class="p-4 bg-emerald-100 text-emerald-600 rounded-2xl">✓</div>
+                        <div>
+                            <h2 class="text-3xl font-extrabold text-slate-900">Vérifier</h2>
+                            <p class="text-slate-500 font-medium">Vérifier et valider un système embarqué ou une installation industrielle.</p>
+                        </div>
+                    </div>
+                    <div class="bg-emerald-50/50 border-l-4 border-emerald-600 p-6 rounded-r-2xl space-y-3 mb-8">
+                        <h3 class="font-extrabold text-emerald-900 text-base tracking-wide uppercase">Justification de l'acquisition</h3>
+                        <p class="text-slate-700 font-medium text-lg leading-relaxed text-justify">
+                            J'ai validé cette compétence en concevant et en déroulant des protocoles d'essais précis pour valider le bon fonctionnement de mes prototypes par rapport aux exigences du cahier des charges.
+                        </p>
+                    </div>
+                    <div class="space-y-6">
+                        <h3 class="text-xl font-bold text-slate-800 border-b border-slate-200 pb-3">Compétences - Vérifier</h3>
+                        <div class="space-y-2">
+                            <button onclick="openProof('V.1')" class="flex gap-4 items-start w-full text-left p-3.5 -mx-3.5 rounded-xl hover:bg-white hover:shadow-sm hover:ring-1 hover:ring-slate-100 transition-all group cursor-pointer">
+                                <span class="shrink-0 mt-0.5 font-bold text-sm px-2.5 py-1.5 rounded transition-colors duration-300 bg-emerald-50 text-emerald-600 group-hover:bg-emerald-600 group-hover:text-white">V.1</span>
+                                <span class="leading-relaxed text-slate-700 text-base text-justify transition-colors duration-300">J'applique, j'élabore, je rédige une procédure d'essais</span>
+                            </button>
+                            <button onclick="openProof('V.2')" class="flex gap-4 items-start w-full text-left p-3.5 -mx-3.5 rounded-xl hover:bg-white hover:shadow-sm hover:ring-1 hover:ring-slate-100 transition-all group cursor-pointer">
+                                <span class="shrink-0 mt-0.5 font-bold text-sm px-2.5 py-1.5 rounded transition-colors duration-300 bg-emerald-50 text-emerald-600 group-hover:bg-emerald-600 group-hover:text-white">V.2</span>
+                                <span class="leading-relaxed text-slate-700 text-base text-justify transition-colors duration-300">J'identifie, je corrige les non-conformités d'un prototype</span>
+                            </button>
+                        </div>
+                    </div>
+                `;
+            } else if (competenceId === 'maintenir') {
+                content = `
+                    <div class="flex items-center gap-4 mb-8 pb-8 border-b border-slate-100">
+                        <div class="p-4 bg-orange-100 text-orange-600 rounded-2xl">🔧</div>
+                        <div>
+                            <h2 class="text-3xl font-extrabold text-slate-900">Maintien en condition opérationnelle</h2>
+                            <p class="text-slate-500 font-medium">Assurer le maintien en condition opérationnelle d'un système embarqué ou d'une installation industrielle.</p>
+                        </div>
+                    </div>
+                    <div class="bg-orange-50/50 border-l-4 border-orange-600 p-6 rounded-r-2xl space-y-3 mb-8">
+                        <h3 class="font-extrabold text-orange-900 text-base tracking-wide uppercase">Justification de l'acquisition</h3>
+                        <p class="text-slate-700 font-medium text-lg leading-relaxed text-justify">
+                            J'ai validé cette compétence en appliquant des opérations de maintenance préventive et corrective lors de mon stage chez Engie Solutions et lors de la mise au point de mes prototypes.
+                        </p>
+                    </div>
+                    <div class="space-y-6">
+                        <h3 class="text-xl font-bold text-slate-800 border-b border-slate-200 pb-3">Compétences - Maintenir</h3>
+                        <div class="space-y-2">
+                            <button onclick="openProof('M.1')" class="flex gap-4 items-start w-full text-left p-3.5 -mx-3.5 rounded-xl hover:bg-white hover:shadow-sm hover:ring-1 hover:ring-slate-100 transition-all group cursor-pointer">
+                                <span class="shrink-0 mt-0.5 font-bold text-sm px-2.5 py-1.5 rounded transition-colors duration-300 bg-orange-50 text-orange-600 group-hover:bg-orange-600 group-hover:text-white">M.1</span>
+                                <span class="leading-relaxed text-slate-700 text-base text-justify transition-colors duration-300">J'applique une opération de maintenance (préventive, corrective, améliorative) à un système</span>
+                            </button>
+                            <button onclick="openProof('M.2')" class="flex gap-4 items-start w-full text-left p-3.5 -mx-3.5 rounded-xl hover:bg-white hover:shadow-sm hover:ring-1 hover:ring-slate-100 transition-all group cursor-pointer">
+                                <span class="shrink-0 mt-0.5 font-bold text-sm px-2.5 py-1.5 rounded transition-colors duration-300 bg-orange-50 text-orange-600 group-hover:bg-orange-600 group-hover:text-white">M.2</span>
+                                <span class="leading-relaxed text-slate-700 text-base text-justify transition-colors duration-300">Je rédige la procédure de maintenance (préventive, corrective, améliorative) d'un système</span>
+                            </button>
+                        </div>
+                    </div>
+                `;
+            }
+            
+            document.getElementById('competence-content').innerHTML = content;
+            document.getElementById('competences-list-view').classList.add('hidden');
+            document.getElementById('competence-detail-view').classList.remove('hidden');
+        }
+        
+        function showCompetencesList() {
+            document.getElementById('competences-list-view').classList.remove('hidden');
+            document.getElementById('competence-detail-view').classList.add('hidden');
+        }
+        
+        function openProof(proofId) {
+            alert(`Preuve: ${proofId}\n\nCette section serait développée avec le contenu détaillé de chaque compétence.`);
+        }
+        
+        // Scroll handler pour navbar
         window.addEventListener('scroll', () => {
-          if (window.scrollY > 50) {
-            nav.classList.remove('bg-transparent','py-6');
-            nav.classList.add('bg-white/90','backdrop-blur-md','shadow-sm','py-3');
-          } else {
-            nav.classList.add('bg-transparent','py-6');
-            nav.classList.remove('bg-white/90','backdrop-blur-md','shadow-sm','py-3');
-          }
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.remove('bg-transparent', 'py-6');
+                navbar.classList.add('bg-white/90', 'backdrop-blur-md', 'shadow-sm', 'py-3');
+            } else {
+                navbar.classList.add('bg-transparent', 'py-6');
+                navbar.classList.remove('bg-white/90', 'backdrop-blur-md', 'shadow-sm', 'py-3');
+            }
         });
-      });
+        
+        // Initialisation
+        changeSection('accueil');
     </script>
-  </body>
+</body>
 </html>
